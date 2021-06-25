@@ -1,0 +1,23 @@
+{
+  "name": "App Name",
+  "short_name": "App name",
+  "description": "Description of the application.",
+  "theme_color": "#FFF",
+  "background_color": "#FFF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}
