@@ -1,4 +1,5 @@
 :root {
+	/* Typography. */
 	--f-title: Arial, sans-serif;
 	--f-body: Arial, sans-serif;
 	--f-1-size: clamp(2.25rem, calc(1rem + 2.64vw), 3.375rem); /* 36px -> 54px */
@@ -11,6 +12,7 @@
 	--f-lede-size: clamp(1.125rem, calc(1rem + 0.556vw), 2rem); /* 18px -> 24px */
 	--f-small-size: clamp(0.625rem, calc(0.625rem + 0.139vw), 0.75rem); /* 10px -> 12px */
 
+	/* Colours. */
 	--c-text: #111; /* Text colour. */
 	--c-bg: #eee; /* Background colour. */
 	--c-brand-a: red;
@@ -21,19 +23,17 @@
 	--c-error: #b83636;
 	--c-warn: #e4c67a;
 
+	/* Layout. */
 	--l-body-pad: clamp(10px, 8vw, 20px);    /* Horizontal spacing. */
 	--l-block-pad: 1rem;  /* Verical spacing. */
 	--l-gutter-width: Min(5vw, 20px);
 	--l-max-width: 1440px;
 	--l-max-content: Min(var(--l-max-width), calc(100vw - var(--l-body-pad) * 2));
-
-	--l-header-height: clamp(2rem, 8vw, 120px);
-	--l-viewport-height: calc(100vh - var(--l-header-height));
-
-	--s-border-radius: 1.875rem;
-	--s-box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
 }
 
+/*******************************
+ *		Base.
+ *******************************/
 html,
 body {
 	padding: 0;
@@ -43,7 +43,7 @@ body {
 	font-smoothing: antialiased;
 	font: 500 100%/1.4 var(--f-body);
   color: var(--c-text);
-	background: var(--c-bg);			
+	background: var(--c-bg);
 }
 
 *,
@@ -60,28 +60,6 @@ img {
 	image-rendering: -webkit-optimize-contrast;
 }
 
-.body-pad {
-	padding-left: var(--l-body-pad);
-	padding-right: var(--l-body-pad);
-}
-
-.block-pad {
-	padding-top: var(--l-block-pad);
-	padding-bottom: var(--l-block-pad);
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.capitalize {
-	text-transform: capitalize;
-}
-
 /*******************************
  *		Typography.
  *******************************/
@@ -91,9 +69,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    margin: 0 0 0.4em;
-    font-family: var(--f-body);
-		font-weight: 100;
+    font-family: var(--f-title);
 }
 
 h1,
@@ -104,9 +80,6 @@ h1,
 h2,
 .h2 {
   font-size: var(--f-2-size);
-	line-height: 2;
-	text-transform: uppercase;
-	border-bottom: 1px solid var(--c-brand-a);
 }
 
 h3,
@@ -140,7 +113,6 @@ small {
   font-size: var(--f-small-size);
 }
 
-
 /*******************************
  *		Forms.
  *******************************/
@@ -157,14 +129,30 @@ textarea {
 	min-height: 120px;
 }
 
+/*******************************
+ *		Layout.
+ *******************************/
+ .body-pad {
+	padding-left: var(--l-body-pad);
+	padding-right: var(--l-body-pad);
+}
+
+.block-pad {
+	padding-top: var(--l-block-pad);
+	padding-bottom: var(--l-block-pad);
+}
 
 /*******************************
- *		Forms.
+ *		Utils.
  *******************************/
-.grid {
-	--grid-template-columns: repeat(12, 1fr);
+ .text-center {
+	text-align: center;
+}
 
-	display: grid;
-	grid-gap: var(--l-gutter-width);
-	grid-template-columns: var(--grid-template-columns);
+.text-right {
+	text-align: right;
+}
+
+.capitalize {
+	text-transform: capitalize;
 }
